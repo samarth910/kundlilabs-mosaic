@@ -52,30 +52,30 @@ const handler = async (req: Request): Promise<Response> => {
       to: ["samarthmishra910@yahoo.com"],
       subject: `🌟 New Contact: ${subject}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; border-radius: 12px; overflow: hidden;">
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
           <div style="background: linear-gradient(135deg, #4c1d95, #7c3aed); padding: 30px; text-align: center;">
             <h1 style="margin: 0; font-size: 28px; color: #fbbf24;">✨ New Cosmic Message ✨</h1>
             <p style="margin: 10px 0 0 0; color: #e5e7eb; font-size: 16px;">A new message has arrived through the cosmic channels</p>
           </div>
           
           <div style="padding: 30px;">
-            <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 8px; padding: 20px; margin-bottom: 20px;">
-              <h2 style="color: #fbbf24; margin-top: 0; font-size: 20px;">📧 Message Details</h2>
-              <p><strong style="color: #a78bfa;">From:</strong> ${name}</p>
-              <p><strong style="color: #a78bfa;">Email:</strong> ${email}</p>
-              <p><strong style="color: #a78bfa;">Subject:</strong> ${subject}</p>
+            <div style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+              <h2 style="color: #4c1d95; margin-top: 0; font-size: 20px;">📧 Message Details</h2>
+              <p style="color: #1e293b; margin: 8px 0;"><strong style="color: #7c3aed;">From:</strong> ${name}</p>
+              <p style="color: #1e293b; margin: 8px 0;"><strong style="color: #7c3aed;">Email:</strong> ${email}</p>
+              <p style="color: #1e293b; margin: 8px 0;"><strong style="color: #7c3aed;">Subject:</strong> ${subject}</p>
             </div>
             
-            <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 8px; padding: 20px;">
-              <h3 style="color: #fbbf24; margin-top: 0;">💫 Message:</h3>
-              <div style="background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 6px; border-left: 4px solid #fbbf24;">
+            <div style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+              <h3 style="color: #4c1d95; margin-top: 0;">💫 Message:</h3>
+              <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #fbbf24; color: #1e293b; line-height: 1.5;">
                 ${message.replace(/\n/g, '<br>')}
               </div>
             </div>
           </div>
           
-          <div style="background: rgba(139, 92, 246, 0.1); padding: 20px; text-align: center; border-top: 1px solid rgba(139, 92, 246, 0.3);">
-            <p style="margin: 0; color: #9ca3af; font-size: 14px;">
+          <div style="background: #f1f5f9; padding: 20px; text-align: center; border-top: 1px solid #e2e8f0;">
+            <p style="margin: 0; color: #64748b; font-size: 14px;">
               🌟 This message was sent through KundliLabs Contact Form 🌟<br>
               May the stars align for a swift response!
             </p>
