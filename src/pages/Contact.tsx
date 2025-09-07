@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Mail, Star, Sparkles } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Contact = () => {
@@ -124,82 +125,100 @@ const Contact = () => {
       
       <Navigation />
       
-      <main className="relative z-10 pt-24 pb-12 px-4 sm:px-8 flex items-center justify-center min-h-screen">
-        <div className="max-w-2xl mx-auto text-center">
-          <Card className="glass-card backdrop-blur-xl">
-            <CardHeader className="text-center">
-              <div className="flex justify-center mb-6">
-                <div className="relative">
-                  <Mail className="h-16 w-16 text-cosmic-purple" />
-                  <div className="absolute -top-2 -right-2">
-                    <Star className="h-6 w-6 text-cosmic-gold animate-pulse" />
-                  </div>
+      <main className="relative z-10 pt-24 pb-12 px-4 sm:px-8">
+        <div className="max-w-4xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-12">
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <Mail className="h-16 w-16 text-cosmic-purple" />
+                <div className="absolute -top-2 -right-2">
+                  <Star className="h-6 w-6 text-cosmic-gold animate-pulse" />
                 </div>
               </div>
-              <CardTitle className="text-3xl font-bold gradient-text mb-4">
-                Get in Touch
-              </CardTitle>
-            </CardHeader>
-            
-            <CardContent className="space-y-6">
-              <div className="bg-gradient-to-r from-cosmic-purple/20 to-cosmic-pink/20 border border-cosmic-purple/30 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  Have a cosmic query or just want to say hi?
-                </h3>
-                <p className="text-white/90 leading-relaxed">
-                  Even ancient sages needed tech support — Parāśara probably would've loved AI if he had a WiFi connection. We're here to combine the best of astrology and modern intelligence.
-                </p>
-              </div>
+            </div>
+            <h1 className="text-4xl font-bold gradient-text mb-4">
+              Get in Touch
+            </h1>
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+              Even ancient sages needed tech support — Parāśara probably would've loved AI if he had a WiFi connection. 
+              We're here to combine the best of astrology and modern intelligence.
+            </p>
+          </div>
 
-              <div className="bg-cosmic-purple/10 border border-cosmic-purple/20 rounded-lg p-6">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <Sparkles className="h-5 w-5 text-cosmic-gold" />
-                  <h3 className="text-cosmic-purple font-semibold">Email Us</h3>
-                  <Sparkles className="h-5 w-5 text-cosmic-gold" />
-                </div>
-                <a 
-                  href="mailto:kundlilabs@q5cg.onmicrosoft.com"
-                  className="text-2xl font-bold text-cosmic-gold hover:text-cosmic-pink transition-colors break-all"
-                >
-                  kundlilabs@q5cg.onmicrosoft.com
-                </a>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Contact Form */}
+            <div>
+              <ContactForm />
+            </div>
 
-              <div className="space-y-4">
-                <p className="text-white/80">
-                  Whether you have questions about your Kundli, need technical support, or just want to share your cosmic journey with us, we'd love to hear from you.
-                </p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                  <div className="bg-white/5 rounded-lg p-4">
-                    <h4 className="text-cosmic-gold font-semibold mb-2">Technical Support</h4>
-                    <p className="text-white/70">Issues with the platform or AI assistant</p>
+            {/* Contact Information */}
+            <div className="space-y-6">
+              {/* Direct Email */}
+              <Card className="glass-card backdrop-blur-xl border-cosmic-purple/30">
+                <CardContent className="p-6">
+                  <div className="text-center">
+                    <div className="flex items-center justify-center gap-3 mb-4">
+                      <Sparkles className="h-5 w-5 text-cosmic-gold" />
+                      <h3 className="text-cosmic-purple font-semibold text-lg">Direct Email</h3>
+                      <Sparkles className="h-5 w-5 text-cosmic-gold" />
+                    </div>
+                    <a 
+                      href="mailto:kundlilabs@q5cg.onmicrosoft.com"
+                      className="text-xl font-bold text-cosmic-gold hover:text-cosmic-pink transition-colors break-all block"
+                    >
+                      kundlilabs@q5cg.onmicrosoft.com
+                    </a>
+                    <p className="text-white/60 text-sm mt-2">
+                      For urgent matters or direct communication
+                    </p>
                   </div>
-                  <div className="bg-white/5 rounded-lg p-4">
-                    <h4 className="text-cosmic-gold font-semibold mb-2">Astrological Queries</h4>
-                    <p className="text-white/70">Questions about readings or interpretations</p>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-4">
-                    <h4 className="text-cosmic-gold font-semibold mb-2">Partnership</h4>
-                    <p className="text-white/70">Business opportunities and collaborations</p>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-4">
-                    <h4 className="text-cosmic-gold font-semibold mb-2">Feedback</h4>
-                    <p className="text-white/70">Share your experience and suggestions</p>
-                  </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
 
-              <div className="text-center pt-4 border-t border-white/10">
-                <p className="text-white/50 text-sm">
-                  We typically respond within 24 hours during business days
-                </p>
-                <p className="text-white/40 text-xs mt-1">
-                  🌟 May the stars guide your message to us 🌟
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+              {/* Support Categories */}
+              <Card className="glass-card backdrop-blur-xl border-cosmic-purple/30">
+                <CardHeader>
+                  <CardTitle className="text-cosmic-gold text-lg text-center">
+                    What can we help you with?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <h4 className="text-cosmic-gold font-semibold mb-2">Technical Support</h4>
+                      <p className="text-white/70 text-sm">Issues with the platform or AI assistant</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <h4 className="text-cosmic-gold font-semibold mb-2">Astrological Queries</h4>
+                      <p className="text-white/70 text-sm">Questions about readings or interpretations</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <h4 className="text-cosmic-gold font-semibold mb-2">Partnership</h4>
+                      <p className="text-white/70 text-sm">Business opportunities and collaborations</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <h4 className="text-cosmic-gold font-semibold mb-2">Feedback</h4>
+                      <p className="text-white/70 text-sm">Share your experience and suggestions</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Response Time */}
+              <Card className="glass-card backdrop-blur-xl border-cosmic-purple/30">
+                <CardContent className="p-6 text-center">
+                  <h4 className="text-cosmic-gold font-semibold mb-3">Response Time</h4>
+                  <p className="text-white/70 text-sm mb-2">
+                    We typically respond within 24 hours during business days
+                  </p>
+                  <p className="text-white/50 text-xs">
+                    🌟 May the stars guide your message to us 🌟
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </main>
       
