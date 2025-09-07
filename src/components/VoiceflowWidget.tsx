@@ -26,100 +26,97 @@ const VoiceflowWidget: React.FC<VoiceflowWidgetProps> = ({ isActive, userId }) =
   useEffect(() => {
     if (!isActive) return;
 
+    console.log('VoiceflowWidget: Activation triggered for user:', userId);
+
     // Check if Voiceflow is already loaded
     if (window.voiceflow?.chat) {
-      console.log('Voiceflow already loaded, opening chat...');
+      console.log('Voiceflow already loaded, showing and opening chat...');
       window.voiceflow.chat.show();
       window.voiceflow.chat.open();
       toast({
-        title: "✨ Disha AI Activated",
-        description: "Your cosmic AI guide is ready to decode your destiny!",
+        title: "✨ Disha AI Ready",
+        description: "Your cosmic guide is activated!",
       });
       return;
     }
 
     console.log('Loading Voiceflow chat widget...');
+    toast({
+      title: "🌟 Initializing Disha AI",
+      description: "Loading your cosmic companion...",
+    });
     
     // Create script element
     const script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
+    script.src = 'https://cdn.voiceflow.com/widget/bundle.mjs'; // Updated URL
+    script.defer = true;
     
     script.onload = () => {
       console.log('Voiceflow script loaded successfully');
-      try {
-        window.voiceflow.chat.load({
-          verify: { projectID: '68bd5f5619d92ea1cd25c143' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production',
-          voice: {
-            url: "https://runtime-api.voiceflow.com"
-          },
-          // Additional configuration for better UX
-          assistant: {
-            title: "Disha AI - Cosmic Guide",
-            description: "Your personal astrology AI assistant",
-            color: "#6366F1",
-            avatar: "🌟"
-          },
-          launch: {
-            event: {
-              type: 'launch'
-            }
-          }
-        });
-        
-        // Auto-open the chat after loading
-        setTimeout(() => {
+      
+      // Add a small delay to ensure proper initialization
+      setTimeout(() => {
+        try {
           if (window.voiceflow?.chat) {
-            window.voiceflow.chat.show();
-            window.voiceflow.chat.open();
-            toast({
-              title: "✨ Disha AI Activated",
-              description: "Your cosmic AI guide is ready to decode your destiny!",
+            console.log('Initializing Voiceflow chat...');
+            window.voiceflow.chat.load({
+              verify: { projectID: '68bd5f5619d92ea1cd25c143' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production'
             });
+            
+            // Wait a bit more for initialization, then show
+            setTimeout(() => {
+              if (window.voiceflow?.chat) {
+                console.log('Opening Voiceflow chat...');
+                window.voiceflow.chat.show();
+                window.voiceflow.chat.open();
+                toast({
+                  title: "✨ Disha AI Activated",
+                  description: "Your cosmic AI guide is ready!",
+                });
+              }
+            }, 2000);
           }
-        }, 1000);
-        
-      } catch (error) {
-        console.error('Error initializing Voiceflow chat:', error);
-        toast({
-          title: "Error",
-          description: "Failed to load Disha AI. Please try again.",
-          variant: "destructive",
-        });
-      }
+        } catch (error) {
+          console.error('Error initializing Voiceflow chat:', error);
+          toast({
+            title: "Error",
+            description: "Failed to load Disha AI. Please try refreshing.",
+            variant: "destructive",
+          });
+        }
+      }, 500);
     };
 
-    script.onerror = () => {
-      console.error('Failed to load Voiceflow script');
+    script.onerror = (error) => {
+      console.error('Failed to load Voiceflow script:', error);
       toast({
-        title: "Error",
-        description: "Failed to load Disha AI. Please check your connection.",
+        title: "Connection Error",
+        description: "Failed to load Disha AI. Please check your connection and try again.",
         variant: "destructive",
       });
     };
 
-    // Insert script into document
-    const firstScript = document.getElementsByTagName('script')[0];
-    if (firstScript && firstScript.parentNode) {
-      firstScript.parentNode.insertBefore(script, firstScript);
-    } else {
-      document.head.appendChild(script);
-    }
+    // Insert script into document head
+    document.head.appendChild(script);
+    console.log('Voiceflow script added to head');
 
     // Cleanup function
     return () => {
-      // Hide the chat when component unmounts or isActive becomes false
+      console.log('VoiceflowWidget cleanup triggered');
       if (window.voiceflow?.chat) {
-        window.voiceflow.chat.hide();
-        window.voiceflow.chat.close();
+        try {
+          window.voiceflow.chat.hide();
+          window.voiceflow.chat.close();
+        } catch (error) {
+          console.log('Error during cleanup:', error);
+        }
       }
     };
   }, [isActive, userId, toast]);
 
-  // This component doesn't render any visible UI
-  // The Voiceflow widget creates its own UI when loaded
   return null;
 };
 

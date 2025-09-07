@@ -34,10 +34,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onAuthSuccess })
         if (session?.user && event === 'SIGNED_IN') {
           onAuthSuccess?.(session.user);
           onClose();
-          toast({
-            title: "Welcome!",
-            description: "You have successfully signed in.",
-          });
+          // Removed repeated toast notification
         }
       }
     );

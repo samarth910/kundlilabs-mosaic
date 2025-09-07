@@ -95,10 +95,7 @@ const SignInModal: React.FC<SignInModalProps> = ({ isOpen, onClose }) => {
         if (error) {
           setError('Invalid email or password. Please try again.');
         } else if (data.user) {
-          toast({
-            title: "Welcome back!",
-            description: "You have successfully signed in.",
-          });
+          // Removed repeated toast notification - user is already signed in
           onClose();
         }
       }

@@ -164,13 +164,20 @@ const Index = () => {
           <PlanetGallery />
           
           {/* Cosmic Disha AI Button - Only for authenticated users */}
-          <div className="mt-16 mb-8 flex flex-col items-center">
-            <CosmicButton onClick={() => setIsDishaChatActive(true)}>
-              Start Disha AI
-            </CosmicButton>
+          <div className="w-full flex flex-col items-center mt-16 mb-8 px-4">
+            <div className="w-full max-w-md flex justify-center">
+              <CosmicButton onClick={() => setIsDishaChatActive(true)}>
+                Start Disha AI
+              </CosmicButton>
+            </div>
             <p className="text-white/60 text-sm mt-4 text-center max-w-lg mx-auto leading-relaxed">
               🌟 Activate your personal cosmic AI guide for deep astrological insights and destiny decoding
             </p>
+            {isDishaChatActive && (
+              <p className="text-cosmic-gold text-xs mt-2 text-center animate-pulse">
+                ✨ Loading Disha AI... ✨
+              </p>
+            )}
           </div>
           
           <ChatbotWidget userId={user.id} />
