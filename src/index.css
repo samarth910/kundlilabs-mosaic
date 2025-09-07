@@ -88,10 +88,14 @@ All colors MUST be HSL.
     --rahu-glow: 200 60% 60%;
     --ketu-glow: var(--celestial-soft-gray);
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.35s cubic-bezier(0.4, 2, 0.6, 1);
-  }
+  /* Animations */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.35s cubic-bezier(0.4, 2, 0.6, 1);
+  
+  /* Cosmic Effects */
+  --cosmic-glow: 0 0 30px rgba(147, 51, 234, 0.6);
+  --cosmic-shadow: 0 0 50px rgba(147, 51, 234, 0.4), 0 0 100px rgba(251, 191, 36, 0.2);
+}
 }
 
 /* Celestial Harmony Font System */
