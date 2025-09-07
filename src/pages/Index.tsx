@@ -5,15 +5,13 @@ import HeroSection from '@/components/HeroSection';
 import PlanetGallery from '@/components/PlanetGallery';
 import ChatbotWidget from '@/components/ChatbotWidget';
 import Footer from '@/components/Footer';
-import CosmicButton from '@/components/CosmicButton';
-import VoiceflowWidget from '@/components/VoiceflowWidget';
 import type { User } from '@supabase/supabase-js';
 import { useLocation } from 'react-router-dom';
 
 const Index = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [isDishaChatActive, setIsDishaChatActive] = useState(false);
+  
   const particlesLoadedRef = useRef(false);
   const location = useLocation();
 
@@ -163,32 +161,9 @@ const Index = () => {
           </div>
           <PlanetGallery />
           
-          {/* Cosmic Disha AI Button - Only for authenticated users */}
-          <div className="w-full flex flex-col items-center mt-16 mb-8 px-4">
-            <div className="w-full max-w-md flex justify-center">
-              <CosmicButton onClick={() => setIsDishaChatActive(true)}>
-                Start Disha AI
-              </CosmicButton>
-            </div>
-            <p className="text-white/60 text-sm mt-4 text-center max-w-lg mx-auto leading-relaxed">
-              🌟 Activate your personal cosmic AI guide for deep astrological insights and destiny decoding
-            </p>
-            {isDishaChatActive && (
-              <p className="text-cosmic-gold text-xs mt-2 text-center animate-pulse">
-                ✨ Loading Disha AI... ✨
-              </p>
-            )}
-          </div>
-          
           <ChatbotWidget userId={user.id} />
           <Footer />
         </div>
-        
-        {/* Voiceflow AI Widget - Only loads when activated */}
-        <VoiceflowWidget 
-          isActive={isDishaChatActive}
-          userId={user.id}
-        />
       </div>
     );
   }
