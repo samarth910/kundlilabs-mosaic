@@ -35,11 +35,16 @@ const Navigation = () => {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Blog', path: '/blog' },
+    { name: 'Pitch Doc for mosAIc', path: '/pitch-doc', isExternal: true },
     { name: 'Donate Us', path: '/donate' },
   ];
 
-  const handleNavClick = (e: React.MouseEvent, path: string) => {
-    // No special handling needed now that About is a separate page
+  const handleNavClick = (e: React.MouseEvent, path: string, isExternal?: boolean) => {
+    if (isExternal && path === '/pitch-doc') {
+      e.preventDefault();
+      // Open the PDF in a new tab
+      window.open('/20250907 Kundlilabs Overview doc.pdf', '_blank');
+    }
   };
 
   const isActiveRoute = (path: string) => {
@@ -67,14 +72,24 @@ const Navigation = () => {
         <ul className="navbar-nav">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link
-                to={item.path}
-                className={`nav-item ${isActiveRoute(item.path) ? 'active' : ''}`}
-                onClick={(e) => handleNavClick(e, item.path)}
-                aria-current={isActiveRoute(item.path) ? 'page' : undefined}
-              >
-                {item.name}
-              </Link>
+              {item.isExternal ? (
+                <button
+                  className={`nav-item ${isActiveRoute(item.path) ? 'active' : ''}`}
+                  onClick={(e) => handleNavClick(e, item.path, item.isExternal)}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <Link
+                  to={item.path}
+                  className={`nav-item ${isActiveRoute(item.path) ? 'active' : ''}`}
+                  onClick={(e) => handleNavClick(e, item.path, item.isExternal)}
+                  aria-current={isActiveRoute(item.path) ? 'page' : undefined}
+                >
+                  {item.name}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -129,17 +144,30 @@ const Navigation = () => {
           <ul className="mobile-nav">
             {navItems.map((item) => (
               <li key={item.name}>
-                <Link
-                  to={item.path}
-                  className={`nav-item ${isActiveRoute(item.path) ? 'active' : ''}`}
-                  onClick={(e) => {
-                    handleNavClick(e, item.path);
-                    setIsMenuOpen(false);
-                  }}
-                  aria-current={isActiveRoute(item.path) ? 'page' : undefined}
-                >
-                  {item.name}
-                </Link>
+                {item.isExternal ? (
+                  <button
+                    className={`nav-item ${isActiveRoute(item.path) ? 'active' : ''}`}
+                    onClick={(e) => {
+                      handleNavClick(e, item.path, item.isExternal);
+                      setIsMenuOpen(false);
+                    }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', width: '100%', textAlign: 'left' }}
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={`nav-item ${isActiveRoute(item.path) ? 'active' : ''}`}
+                    onClick={(e) => {
+                      handleNavClick(e, item.path, item.isExternal);
+                      setIsMenuOpen(false);
+                    }}
+                    aria-current={isActiveRoute(item.path) ? 'page' : undefined}
+                  >
+                    {item.name}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
