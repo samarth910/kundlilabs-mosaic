@@ -6,14 +6,14 @@ import PlanetGallery from '@/components/PlanetGallery';
 import ChatbotWidget from '@/components/ChatbotWidget';
 import Footer from '@/components/Footer';
 import CosmicButton from '@/components/CosmicButton';
-import DishaChatbot from '@/components/DishaChatbot';
+import VoiceflowWidget from '@/components/VoiceflowWidget';
 import type { User } from '@supabase/supabase-js';
 import { useLocation } from 'react-router-dom';
 
 const Index = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [showDishaChatbot, setShowDishaChatbot] = useState(false);
+  const [isDishaChatActive, setIsDishaChatActive] = useState(false);
   const particlesLoadedRef = useRef(false);
   const location = useLocation();
 
@@ -165,7 +165,7 @@ const Index = () => {
           
           {/* Cosmic Disha AI Button - Only for authenticated users */}
           <div className="mt-16 mb-8">
-            <CosmicButton onClick={() => setShowDishaChatbot(true)}>
+            <CosmicButton onClick={() => setIsDishaChatActive(true)}>
               Start Disha AI
             </CosmicButton>
             <p className="text-white/60 text-sm mt-3 text-center max-w-md mx-auto">
@@ -177,10 +177,9 @@ const Index = () => {
           <Footer />
         </div>
         
-        {/* Disha AI Chatbot Modal */}
-        <DishaChatbot 
-          isOpen={showDishaChatbot}
-          onClose={() => setShowDishaChatbot(false)}
+        {/* Voiceflow AI Widget - Only loads when activated */}
+        <VoiceflowWidget 
+          isActive={isDishaChatActive}
           userId={user.id}
         />
       </div>
