@@ -26,7 +26,7 @@ const featuredPost = {
   title: 'Welcome to KundliLabs: Ancient Charts, Modern Code',
   excerpt: 'Discover how ancient Vedic wisdom meets modern AI to create a revolutionary approach to understanding your cosmic destiny. At KundliLabs, we blend ancient Vedic wisdom with modern technology to illuminate your journey, offering clarity and direction when you need it most.',
   author: 'Team KundliLabs',
-  created_at: '2025-07-15',
+  created_at: '2025-09-07',
   reading_time: 5,
   category: 'Astrology Basics'
 };
@@ -39,7 +39,7 @@ const placeholderPosts: BlogPost[] = [
     content: 'Full content here...',
     excerpt: 'Discover how ancient Vedic wisdom meets modern AI to create a revolutionary approach to understanding your cosmic destiny.',
     author: 'Team KundliLabs',
-    created_at: '2025-07-15',
+    created_at: '2025-09-07',
     reading_time: 5,
     category: 'Astrology Basics'
   },
@@ -49,7 +49,7 @@ const placeholderPosts: BlogPost[] = [
     content: 'Full content here...',
     excerpt: 'Explore the fascinating intersection of artificial intelligence and traditional astrology. Can AI truly understand your birth chart better than a human astrologer?',
     author: 'Team KundliLabs',
-    created_at: '2025-07-16',
+    created_at: '2025-09-08',
     reading_time: 4,
     category: 'AI & Astrology'
   },
@@ -59,7 +59,7 @@ const placeholderPosts: BlogPost[] = [
     content: 'Full content here...',
     excerpt: 'A thoughtful exploration of whether Kundli astrology is real, and how to approach it with both skepticism and openness to its potential value.',
     author: 'Team KundliLabs',
-    created_at: '2025-07-17',
+    created_at: '2025-09-09',
     reading_time: 4,
     category: 'Philosophy'
   }
