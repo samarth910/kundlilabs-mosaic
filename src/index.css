@@ -358,12 +358,15 @@ All colors MUST be HSL.
   .navbar-brand {
     position: relative;
     display: inline-block;
-    color: #ffffff;
+    background: linear-gradient(90deg, #6764f1 0%, #e89626 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: 700;
     font-size: 1.5rem;
     text-decoration: none;
     overflow: hidden;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   /* Before and after pseudo-elements for animation */
@@ -397,6 +400,10 @@ All colors MUST be HSL.
   /* Span animates out while new text animates in */
   .navbar-brand span {
     display: inline-block;
+    background: linear-gradient(90deg, #6764f1 0%, #e89626 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
   }
 
