@@ -42,8 +42,14 @@ const Navigation = () => {
   const handleNavClick = (e: React.MouseEvent, path: string, isExternal?: boolean) => {
     if (isExternal && path === '/pitch-doc') {
       e.preventDefault();
-      // Open the PDF in a new tab
-      window.open('/20250907KundlilabsOverviewdoc.pdf', '_blank');
+      // Create download link for the PDF
+      const link = document.createElement('a');
+      link.href = '/20250907KundlilabsOverviewdoc.pdf';
+      link.download = 'KundliLabs-mosAIc-Pitch-2025.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   };
 
