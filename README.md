@@ -56,16 +56,16 @@ This project was created as a submission for the **[mosAIc AI Buildathon](https:
 
 ## Pitch Document
 
-📄 **Complete project details, vision, and technical architecture can be found in our comprehensive pitch document:**
+📄 **Our quick pitch for the mosAIc AI Buildathon can be found here:**
 
-**[20250907KundlilabsOverviewdoc.pdf](./20250907KundlilabsOverviewdoc.pdf)**
+**[20250907KundlilabsOverviewdoc.pdf](/20250907KundlilabsOverviewdoc.pdf)**
 
-This document includes:
-- Detailed project vision and market analysis
-- Technical architecture and AI integration strategy  
-- User experience design and flow
-- Business model and monetization approach
-- Future roadmap and scalability plans
+This pitch document includes:
+- Project overview and vision
+- Key features and AI integration
+- Market opportunity and target audience
+- Development approach
+
 
 ---
 
