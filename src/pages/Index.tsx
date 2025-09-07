@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import PlanetGallery from '@/components/PlanetGallery';
 import ChatbotWidget from '@/components/ChatbotWidget';
 import Footer from '@/components/Footer';
+import VoiceflowWidget from '@/components/VoiceflowWidget';
 import type { User } from '@supabase/supabase-js';
 import { useLocation } from 'react-router-dom';
 
@@ -164,6 +165,9 @@ const Index = () => {
           <ChatbotWidget userId={user.id} />
           <Footer />
         </div>
+        
+        {/* Voiceflow Widget - Only loads when user is authenticated */}
+        <VoiceflowWidget userId={user.id} />
       </div>
     );
   }
