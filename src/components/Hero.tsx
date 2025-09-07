@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import SignInModal from "./SignInModal";
 
 const Hero = () => {
+  const [showSignInModal, setShowSignInModal] = useState(false);
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
@@ -17,7 +20,11 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="glow-on-hover">
+          <Button 
+            size="lg" 
+            className="glow-on-hover"
+            onClick={() => setShowSignInModal(true)}
+          >
             Start Building
           </Button>
           <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-black">
@@ -25,6 +32,11 @@ const Hero = () => {
           </Button>
         </div>
       </div>
+      
+      <SignInModal 
+        isOpen={showSignInModal}
+        onClose={() => setShowSignInModal(false)}
+      />
     </section>
   );
 };
