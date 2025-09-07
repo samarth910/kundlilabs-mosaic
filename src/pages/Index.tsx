@@ -149,7 +149,7 @@ const Index = () => {
     return (
       <div className="min-h-screen bg-background relative">
         {/* Particles Background */}
-        <div id="particles-js" className="fixed top-0 left-0 w-full h-full opacity-30"></div>
+        <div id="particles-js" className="fixed top-0 left-0 w-full h-full opacity-30 pointer-events-none"></div>
         <Navigation />
         <div className="pt-20 min-h-screen flex flex-col items-center justify-center">
           <div className="text-center mb-12">
@@ -176,7 +176,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       {/* Particles Background */}
-      <div id="particles-js" className="fixed top-0 left-0 w-full h-full opacity-30"></div>
+      <div id="particles-js" className="fixed top-0 left-0 w-full h-full opacity-30 pointer-events-none"></div>
       <Navigation />
       <HeroSection />
       <Footer />
