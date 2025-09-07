@@ -1,45 +1,53 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border py-12">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
-            <h3 className="text-xl font-bold text-card-foreground mb-4">
-              Your Company
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Building the future, one line of code at a time. 
-              Join us on our mission to create amazing experiences.
-            </p>
+    <footer className="bg-background border-t border-white/10 py-6 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center text-gray-400 text-xs">
+          <div className="mb-2">
+            <span>Reach Us | </span>
+            <a 
+              href="mailto:kundlilabs@q5cg.onmicrosoft.com" 
+              className="text-cosmic-gold hover:text-cosmic-pink transition-colors"
+            >
+              kundlilabs@q5cg.onmicrosoft.com
+            </a>
           </div>
-          
-          <div>
-            <h4 className="font-semibold text-card-foreground mb-4">Product</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-card-foreground transition-colors">Features</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-card-foreground transition-colors">Pricing</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-card-foreground transition-colors">Documentation</a></li>
-            </ul>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              to="/terms" 
+              className="hover:text-cosmic-gold transition-colors"
+            >
+              T&C
+            </Link>
+            <span>|</span>
+            <Link 
+              to="/privacy" 
+              className="hover:text-cosmic-gold transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <span>|</span>
+            <Link 
+              to="/refund" 
+              className="hover:text-cosmic-gold transition-colors"
+            >
+              Refund and Cancellation Policy
+            </Link>
+            <span>|</span>
+            <Link 
+              to="/contact" 
+              className="hover:text-cosmic-gold transition-colors"
+            >
+              Contact
+            </Link>
           </div>
-          
-          <div>
-            <h4 className="font-semibold text-card-foreground mb-4">Company</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-card-foreground transition-colors">About</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-card-foreground transition-colors">Contact</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-card-foreground transition-colors">Privacy</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="border-t border-border mt-8 pt-8 text-center">
-          <p className="text-muted-foreground">
-            © 2024 Your Company. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>
   );
 };
 
-export default Footer;
+export default Footer; 
