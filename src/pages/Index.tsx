@@ -4,7 +4,11 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import PlanetGallery from '@/components/PlanetGallery';
 import ChatbotWidget from '@/components/ChatbotWidget';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Features from '@/components/Features';
 import Footer from '@/components/Footer';
+import FooterLanding from '@/components/FooterLanding';
 import type { User } from '@supabase/supabase-js';
 import { useLocation } from 'react-router-dom';
 
@@ -166,14 +170,15 @@ const Index = () => {
     );
   }
 
-  // Non-authenticated user - full homepage with all sections
+  // Non-authenticated user - simple landing page with white text
   return (
-    <div className="min-h-screen bg-background relative">
-      {/* Particles Background */}
-      <div id="particles-js" className="fixed top-0 left-0 w-full h-full opacity-30"></div>
-      <Navigation />
-      <HeroSection />
-      <Footer />
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative">
+      <div className="min-h-screen">
+        <Header />
+        <Hero />
+        <Features />
+        <FooterLanding />
+      </div>
     </div>
   );
 };
