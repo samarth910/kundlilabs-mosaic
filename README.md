@@ -58,7 +58,7 @@ This project was created as a submission for the **[mosAIc AI Buildathon](https:
 
 📄 **Complete project details, vision, and technical architecture can be found in our comprehensive pitch document:**
 
-**[20250907 Kundlilabs Overview doc.pdf](./20250907%20Kundlilabs%20Overview%20doc.pdf)**
+**[20250907KundlilabsOverviewdoc.pdf](./20250907KundlilabsOverviewdoc.pdf)**
 
 This document includes:
 - Detailed project vision and market analysis

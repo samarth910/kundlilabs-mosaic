@@ -43,7 +43,7 @@ const Navigation = () => {
     if (isExternal && path === '/pitch-doc') {
       e.preventDefault();
       // Open the PDF in a new tab
-      window.open('/20250907 Kundlilabs Overview doc.pdf', '_blank');
+      window.open('./20250907KundlilabsOverviewdoc.pdf', '_blank');
     }
   };
 
