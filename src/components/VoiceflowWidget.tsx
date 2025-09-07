@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { toast } from '@/hooks/use-toast';
+import { useToast } from '@/hooks/use-toast';
 
 interface VoiceflowWidgetProps {
   isActive: boolean;
@@ -21,6 +21,7 @@ declare global {
 }
 
 const VoiceflowWidget: React.FC<VoiceflowWidgetProps> = ({ isActive, userId }) => {
+  const { toast } = useToast();
   
   useEffect(() => {
     if (!isActive) return;
@@ -115,7 +116,7 @@ const VoiceflowWidget: React.FC<VoiceflowWidgetProps> = ({ isActive, userId }) =
         window.voiceflow.chat.close();
       }
     };
-  }, [isActive, userId]);
+  }, [isActive, userId, toast]);
 
   // This component doesn't render any visible UI
   // The Voiceflow widget creates its own UI when loaded

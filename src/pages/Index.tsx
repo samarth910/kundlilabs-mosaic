@@ -164,12 +164,12 @@ const Index = () => {
           <PlanetGallery />
           
           {/* Cosmic Disha AI Button - Only for authenticated users */}
-          <div className="mt-16 mb-8">
+          <div className="mt-16 mb-8 flex flex-col items-center">
             <CosmicButton onClick={() => setIsDishaChatActive(true)}>
               Start Disha AI
             </CosmicButton>
-            <p className="text-white/60 text-sm mt-3 text-center max-w-md mx-auto">
-              Activate your personal cosmic AI guide for deep astrological insights and destiny decoding
+            <p className="text-white/60 text-sm mt-4 text-center max-w-lg mx-auto leading-relaxed">
+              🌟 Activate your personal cosmic AI guide for deep astrological insights and destiny decoding
             </p>
           </div>
           
