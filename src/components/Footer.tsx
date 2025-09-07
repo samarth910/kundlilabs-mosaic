@@ -18,28 +18,28 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
               to="/terms" 
-              className="hover:text-cosmic-gold transition-colors"
+              className="hover:text-cosmic-gold transition-colors cursor-pointer"
             >
               T&C
             </Link>
             <span>|</span>
             <Link 
               to="/privacy" 
-              className="hover:text-cosmic-gold transition-colors"
+              className="hover:text-cosmic-gold transition-colors cursor-pointer"
             >
               Privacy Policy
             </Link>
             <span>|</span>
             <Link 
               to="/refund" 
-              className="hover:text-cosmic-gold transition-colors"
+              className="hover:text-cosmic-gold transition-colors cursor-pointer"
             >
               Refund and Cancellation Policy
             </Link>
             <span>|</span>
             <Link 
               to="/contact" 
-              className="hover:text-cosmic-gold transition-colors"
+              className="hover:text-cosmic-gold transition-colors cursor-pointer"
             >
               Contact
             </Link>
