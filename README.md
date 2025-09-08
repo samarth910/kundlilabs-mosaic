@@ -1,4 +1,4 @@
-# KundliLabs.org 🕉️
+# KundliLabs 🕉️
 
 A next-generation web platform that bridges the ancient wisdom of Vedic astrology with cutting-edge artificial intelligence.
 
@@ -36,7 +36,7 @@ A next-generation web platform that bridges the ancient wisdom of Vedic astrolog
 
 ## About
 
-KundliLabs.org is an innovative AI-powered platform that revolutionizes how people interact with Vedic astrology. By combining ancient wisdom with modern artificial intelligence, we make personalized astrological insights accessible, accurate, and meaningful for everyone seeking guidance in their life's journey.
+KundliLabs is an innovative AI-powered platform that revolutionizes how people interact with Vedic astrology. By combining ancient wisdom with modern artificial intelligence, we make personalized astrological insights accessible, accurate, and meaningful for everyone seeking guidance in their life's journey.
 
 **Vision**: To democratize access to Vedic astrology through AI, helping users navigate life's complexities with clarity and purpose.
 
@@ -114,9 +114,11 @@ This pitch document includes:
 
 ## Demo
 
-Visit [(https://kundlilabs-mosaic.lovable.app/)](https://kundlilabs-mosaic.lovable.app/)](https://kundlilabs.org) to try the platform.
+Visit [(https://kundlilabs-mosaic.lovable.app/)](https://kundlilabs-mosaic.lovable.app/)] to try the platform.
 
-*Screenshots of the UI can be added here.*
+<img width="953" height="460" alt="Kundlilabs" src="https://github.com/user-attachments/assets/16923f41-5438-4a0c-944f-57ce34687274" />
+
+
 
 ---
 
@@ -193,11 +195,11 @@ You can find these keys in your Supabase project settings. The Supabase client i
 
 ## Deployment
 
-The live version of KundliLabs.org is deployed with a combination of services:
+The live version of KundliLabs is deployed with a combination of services:
 
--   **Vercel:** For hosting the frontend application.
--   **IONOS:** For domain name registration.
 -   **Lovable:** Used for continuous integration and deployment pipelines.
+-   **IONOS:** For domain name registration. (Pending)
+
 
 To deploy your own version, you can use any platform that supports Node.js applications, such as Vercel, Netlify, or AWS Amplify.
 
