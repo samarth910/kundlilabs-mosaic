@@ -114,7 +114,7 @@ This pitch document includes:
 
 ## Demo
 
-Visit [kundlilabs.org](https://kundlilabs.org) to try the platform.
+Visit [(https://kundlilabs-mosaic.lovable.app/)](https://kundlilabs-mosaic.lovable.app/)](https://kundlilabs.org) to try the platform.
 
 *Screenshots of the UI can be added here.*
 
